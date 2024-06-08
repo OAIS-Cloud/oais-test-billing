@@ -39,7 +39,6 @@ allOpen {
     annotation("jakarta.ws.rs.Path")
     annotation("jakarta.enterprise.context.ApplicationScoped")
     annotation("jakarta.persistence.Entity")
-    annotation("io.quarkus.test.junit.QuarkusTest")
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
