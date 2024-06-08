@@ -1,11 +1,12 @@
 package com.oaiscloud.billing.core.resources
 
 import com.oaiscloud.billing.core.domain.entities.Currency
-import com.oaiscloud.billing.core.domain.exceptions.currency.AlreadyExistsException
 import com.oaiscloud.billing.core.dtos.currency.CreateCurrencyDTO
 import com.oaiscloud.billing.core.dtos.currency.UpdateCurrencyDTO
 import com.oaiscloud.billing.core.infra.http.Routes
+import com.oaiscloud.billing.core.repositories.ContractRepository
 import com.oaiscloud.billing.core.services.CurrencyService
+import jakarta.inject.Inject
 import jakarta.validation.Valid
 import jakarta.ws.rs.Consumes
 import jakarta.ws.rs.GET
@@ -21,6 +22,9 @@ import jakarta.ws.rs.core.Response
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 class CurrencyResource(private val currencyService: CurrencyService) {
+    @Inject
+    lateinit var contractRepository: ContractRepository
+
     @GET
     fun getCurrencies(): List<Currency> {
         return currencyService.listAll();

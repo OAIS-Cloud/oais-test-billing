@@ -23,8 +23,8 @@ class CurrencyService(private val repository: CurrencyRepository) {
     }
 
     @Transactional
-    fun removeCurrencyById(id: Long) {
-        repository.deleteById(id);
+    fun removeCurrencyById(id: Long): Boolean {
+        return repository.deleteById(id);
     }
 
     @Transactional
