@@ -1,6 +1,8 @@
 package com.oaiscloud.billing.core.resources
 
 import com.oaiscloud.billing.core.domain.entities.Currency
+import com.oaiscloud.billing.core.domain.exceptions.currency.CannotDeleteCurrencyException
+import com.oaiscloud.billing.core.domain.exceptions.currency.CurrencyNotFoundException
 import com.oaiscloud.billing.core.dtos.currency.CreateCurrencyDTO
 import com.oaiscloud.billing.core.dtos.currency.UpdateCurrencyDTO
 import com.oaiscloud.billing.core.infra.http.Routes
@@ -9,6 +11,7 @@ import com.oaiscloud.billing.core.services.CurrencyService
 import jakarta.inject.Inject
 import jakarta.validation.Valid
 import jakarta.ws.rs.Consumes
+import jakarta.ws.rs.DELETE
 import jakarta.ws.rs.GET
 import jakarta.ws.rs.POST
 import jakarta.ws.rs.PUT
@@ -43,6 +46,23 @@ class CurrencyResource(private val currencyService: CurrencyService) {
 
         return Response.status(Response.Status.CREATED).build();
     }
+
+    @DELETE
+    @Path("/{currencyId}")
+    fun deleteCurrency(@PathParam("currencyId") id: Long): Response {
+        var currencyContractsCount = contractRepository.count("currency.id", id);
+        if (currencyContractsCount > 0) {
+            throw CannotDeleteCurrencyException();
+        }
+
+        val deleted = currencyService.removeCurrencyById(id);
+        if (!deleted) {
+            throw CurrencyNotFoundException();
+        }
+
+        return Response.ok().build();
+    }
+
 
     @PUT
     @Path("/{currencyId}")
