@@ -1,10 +1,8 @@
-<script lang="ts" setup>
-const { toggleTheme } = useTheme();
-</script>
+<script lang="ts" setup></script>
 
 <template>
   <div>
-    <UButton @click="toggleTheme" size="sm" square icon="i-heroicons-sun" variant="solid" />
+    <ToggleThemeButton />
     <slot />
   </div>
 </template>

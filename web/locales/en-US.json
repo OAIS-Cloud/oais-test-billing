@@ -1,5 +1,10 @@
 {
   "home": {
     "hello_world": "Hello world!"
+  },
+  "tooltip": {
+    "toggle_theme": {
+      "dark": "Dark mode"
+    }
   }
 }
