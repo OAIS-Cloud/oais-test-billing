@@ -25,6 +25,8 @@ dependencies {
     implementation("io.quarkus:quarkus-hibernate-orm")
     implementation("io.quarkus:quarkus-resteasy")
     implementation("io.quarkus:quarkus-config-yaml")
+    implementation("com.itextpdf:itext7-core:7.1.16")
+    implementation("org.apache.poi:poi-ooxml:5.2.3")
 }
 
 group = "com.oaiscloud.billing"
