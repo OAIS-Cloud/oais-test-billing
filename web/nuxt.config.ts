@@ -1,8 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@pinia/nuxt', '@nuxtjs/color-mode', '@nuxt/fonts', '@nuxt/ui', '@nuxtjs/i18n'],
-  srcDir: './src',
+  modules: [
+    '@pinia/nuxt',
+    '@nuxtjs/color-mode',
+    '@nuxt/fonts',
+    '@nuxtjs/i18n',
+    'shadcn-nuxt',
+    '@nuxtjs/tailwindcss',
+  ],
+  tailwindcss: {
+    cssPath: '~/assets/css/tailwind.css',
+  },
   colorMode: {
     classSuffix: '',
     preference: 'light',
@@ -17,7 +26,6 @@ export default defineNuxtConfig({
     provider: 'google',
   },
   i18n: {
-    lazy: true,
     strategy: 'no_prefix',
     langDir: '../locales',
     defaultLocale: 'pt-BR',

@@ -1,11 +1,18 @@
 {
-  "home": {
-    "hello_world": "Olá mundo!"
-  },
-  "tooltip": {
-    "toggle_theme": {
-      "dark": "Modo escuro",
-      "light": "Modo claro"
+  "layout": {
+    "sidebar": {
+      "menu": {
+        "management": {
+          "category_name": "Gerenciamento",
+          "currencies": "Moedas",
+          "contracts": "Contratos"
+        }
+      }
     }
+  },
+  "home": {
+    "hello_world": "Olá mundo!",
+    "translation": "Tradução",
+    "lorem_translated": "Se o cliente for muito inteligente, ele conseguirá alcançar o resultado desejado. Convenhamos, eles não sabem o que o arquiteto mais precisa, né? Nem menos nem menos pronto para prazeres. Qualquer um deles deve estar presente e ninguém."
   }
 }
