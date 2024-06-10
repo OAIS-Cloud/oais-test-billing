@@ -31,6 +31,13 @@ class CurrencyService(private val repository: CurrencyRepository) {
     fun updateCurrencyById(id: Long, currencyUpdate: Currency): Currency {
         val currency = repository.findById(id) ?: throw CurrencyNotFoundException();
 
+        if (currency.code != currencyUpdate.code) {
+            val currencyCountWithSameCode = repository.count("code", currencyUpdate.code);
+            if (currencyCountWithSameCode > 0) {
+                throw AlreadyExistsException(currency.code);
+            }
+        }
+
         currency.code = currencyUpdate.code;
         currency.name = currencyUpdate.name;
         repository.persist(currency);

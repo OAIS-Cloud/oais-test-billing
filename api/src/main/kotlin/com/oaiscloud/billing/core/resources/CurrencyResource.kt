@@ -44,7 +44,7 @@ class CurrencyResource(private val currencyService: CurrencyService) {
 
         currencyService.addCurrency(currency);
 
-        return Response.status(Response.Status.CREATED).build();
+        return Response.status(Response.Status.CREATED).entity(currency).build();
     }
 
     @DELETE
