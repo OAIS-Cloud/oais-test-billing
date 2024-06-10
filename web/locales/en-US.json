@@ -1,0 +1,18 @@
+{
+  "layout": {
+    "sidebar": {
+      "menu": {
+        "management": {
+          "category_name": "Management",
+          "currencies": "Currencies",
+          "contracts": "Contracts"
+        }
+      }
+    }
+  },
+  "home": {
+    "hello_world": "Hello world!",
+    "translation": "Translation",
+    "lorem_translated": "If the customer is very smart, he or she will be able to achieve the desired result. Let's face it, they don't know what the architect needs most, right? No less or less ready for pleasures. Any of them should be present and no one."
+  }
+}

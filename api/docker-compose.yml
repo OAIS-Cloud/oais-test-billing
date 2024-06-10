@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: bitnami/postgresql:latest
+    container_name: postgres
+    ports:
+      - 5432:5432
+    restart: unless-stopped
+    environment:
+      - POSTGRESQL_USERNAME=admin
+      - POSTGRESQL_PASSWORD=admin
+      - POSTGRESQL_DATABASE=quarkus_dev
+    volumes:
+      - ./postgres_data:/bitnami/postgresql
