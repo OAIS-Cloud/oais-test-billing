@@ -44,7 +44,7 @@ class CurrencyResource(private val currencyService: CurrencyService) {
 
         currencyService.addCurrency(currency);
 
-        return Response.status(Response.Status.CREATED).build();
+        return Response.status(Response.Status.CREATED).entity(currency).build();
     }
 
     @DELETE
@@ -74,8 +74,8 @@ class CurrencyResource(private val currencyService: CurrencyService) {
             name = updateCurrencyDTO.name.trim();
         };
 
-        currencyService.updateCurrencyById(id, currency);
+        val updatedCurrency = currencyService.updateCurrencyById(id, currency);
 
-        return Response.ok().build();
+        return Response.status(Response.Status.OK).entity(updatedCurrency).build();
     }
 }

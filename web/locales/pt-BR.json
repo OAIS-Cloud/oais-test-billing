@@ -2,6 +2,10 @@
   "layout": {
     "sidebar": {
       "menu": {
+        "home": {
+          "category_name": "Bem vindo",
+          "home": "Inicio"
+        },
         "management": {
           "category_name": "Gerenciamento",
           "currencies": "Moedas",
@@ -11,8 +15,103 @@
     }
   },
   "home": {
+    "header": {
+      "title": "Bem vindo(a)!",
+      "subtitle": "Esperamos que você tenha a melhor experiência possível em nosso painel de gerenciamento de cobranças! -> (O chart usado ainda está em fase beta então ele contém alguns bugs que será introduzido nas proximas semanas)"
+    },
+    "analytics": {
+      "currencies": {
+        "title": "Moedas",
+        "fields": {
+          "created_currencies": "Moedas criadas"
+        }
+      },
+      "contracts": {
+        "title": "Contratos",
+        "fields": {
+          "created_contracts": "Contratos criados"
+        }
+      },
+      "general": {
+        "title": "Visão geral",
+        "fields": {
+          "created_currencies": "Moedas criadas",
+          "created_contracts": "Contratos criados"
+        }
+      }
+    }
+  },
+  "contracts": {
     "hello_world": "Olá mundo!",
     "translation": "Tradução",
     "lorem_translated": "Se o cliente for muito inteligente, ele conseguirá alcançar o resultado desejado. Convenhamos, eles não sabem o que o arquiteto mais precisa, né? Nem menos nem menos pronto para prazeres. Qualquer um deles deve estar presente e ninguém."
+  },
+  "currencies": {
+    "header": {
+      "title": "Gerenciamento de Moedas",
+      "subtitle": "Aqui você poderá listar, criar e editar moedas!"
+    },
+    "toasts": {
+      "deleted_successfully": "Moeda deletada com sucesso!",
+      "cannot_delete": "Você não pode deletar esta moeda pois ela possui contratos vinculados a ela."
+    },
+    "buttons": {
+      "new_currency": "Nova moeda",
+      "edit_currency": "Editar",
+      "delete_currency": "Deletar moeda"
+    },
+    "forms": {
+      "create_currency_modal": {
+        "title": "Criar moeda",
+        "description": "Preencha os campos abaixo para criar uma nova moeda",
+        "errors": {
+          "required": "Campo obrigatório",
+          "code_min_length": "Mínimo 1 caracter",
+          "code_max_length": "Máximo 4 caracteres",
+          "name_min_length": "Mínimo 3 caracteres",
+          "name_max_length": "Máximo 256 caracteres",
+          "code_conflict": "Uma moeda com o mesmo código já existe.",
+          "bad_request": "Ocorreu um erro ao criar sua moeda. Revise os dados e tente novamente.",
+          "unknown_creation_error": "Ocorreu um erro inesperado. Tente novamente mais tarde."
+        },
+        "inputs": {
+          "code": {
+            "label": "Código"
+          },
+          "name": {
+            "label": "Nome"
+          }
+        },
+        "buttons": {
+          "save": "Criar",
+          "cancel": "Cancelar"
+        }
+      },
+      "edit_currency_modal": {
+        "title": "Editar moeda",
+        "errors": {
+          "required": "Campo obrigatório",
+          "code_min_length": "Mínimo 1 caracter",
+          "code_max_length": "Máximo 4 caracteres",
+          "name_min_length": "Mínimo 3 caracteres",
+          "name_max_length": "Máximo 256 caracteres",
+          "code_conflict": "Uma moeda com o mesmo código já existe.",
+          "bad_request": "Ocorreu um erro ao editar esta moeda. Revise os dados e tente novamente.",
+          "unknown_creation_error": "Ocorreu um erro inesperado. Tente novamente mais tarde."
+        },
+        "inputs": {
+          "code": {
+            "label": "Código"
+          },
+          "name": {
+            "label": "Nome"
+          }
+        },
+        "buttons": {
+          "save": "Salvar",
+          "cancel": "Cancelar"
+        }
+      }
+    }
   }
 }
