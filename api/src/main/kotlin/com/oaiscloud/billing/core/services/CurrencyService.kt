@@ -6,6 +6,8 @@ import com.oaiscloud.billing.core.domain.exceptions.currency.CurrencyNotFoundExc
 import com.oaiscloud.billing.core.repositories.CurrencyRepository
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.transaction.Transactional
+import java.time.LocalDate
+import java.time.LocalDateTime
 
 @ApplicationScoped
 class CurrencyService(private val repository: CurrencyRepository) {
@@ -43,5 +45,14 @@ class CurrencyService(private val repository: CurrencyRepository) {
         repository.persist(currency);
 
         return currency;
+    }
+
+    fun getCurrenciesAnalyticsBetweenDates(startDate: LocalDateTime, endDate: LocalDateTime): Map<LocalDate, Long> {
+        val contracts = repository.findCurrenciesByDateRange(startDate, endDate);
+
+        return contracts
+            .groupingBy { it.createdAt.toLocalDate() }
+            .eachCount()
+            .mapValues { it.value.toLong() };
     }
 }

@@ -5,6 +5,8 @@ import com.oaiscloud.billing.core.domain.exceptions.contract.ContractNotFoundExc
 import com.oaiscloud.billing.core.repositories.ContractRepository
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.transaction.Transactional
+import java.time.LocalDate
+import java.time.LocalDateTime
 
 @ApplicationScoped
 class ContractService(private val repository: ContractRepository) {
@@ -31,5 +33,14 @@ class ContractService(private val repository: ContractRepository) {
         repository.persist(contract);
 
         return contract;
+    }
+
+    fun getContractsAnalyticsBetweenDates(startDate: LocalDateTime, endDate: LocalDateTime): Map<LocalDate, Long> {
+        val contracts = repository.findContractsByDateRange(startDate, endDate);
+
+        return contracts
+            .groupingBy { it.createdAt.toLocalDate() }
+            .eachCount()
+            .mapValues { it.value.toLong() };
     }
 }
