@@ -5,6 +5,10 @@ import { ToggleThemeButton } from '../buttons';
 import { LanguageSelect } from '../select-menus';
 import { Button } from '../ui/button';
 
+defineProps<{
+  hideMobileMenuButton?: boolean;
+}>();
+
 const { setMobileMenuOpen } = useMobileMenu();
 </script>
 
@@ -17,6 +21,7 @@ const { setMobileMenuOpen } = useMobileMenu();
       </a>
 
       <Button
+        v-if="!hideMobileMenuButton"
         variant="ghost"
         size="icon"
         class="ml-auto md:hidden"

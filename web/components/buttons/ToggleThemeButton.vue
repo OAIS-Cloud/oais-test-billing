@@ -21,7 +21,7 @@ defineProps<{
 
 <template>
   <Button :variant="outlined ? 'outline' : 'ghost'" size="icon" @click="isDark = !isDark">
-    <Sun :size="20" :stroke-width="1.25" v-if="!isDark" />
     <Moon :size="20" :stroke-width="1.25" v-if="isDark" />
+    <Sun :size="20" :stroke-width="1.25" v-else />
   </Button>
 </template>

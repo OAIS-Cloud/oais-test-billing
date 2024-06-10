@@ -2,6 +2,10 @@
   "layout": {
     "sidebar": {
       "menu": {
+        "home": {
+          "category_name": "Welcome",
+          "home": "Home"
+        },
         "management": {
           "category_name": "Management",
           "currencies": "Currencies",
@@ -11,8 +15,103 @@
     }
   },
   "home": {
+    "header": {
+      "title": "Welcome!",
+      "subtitle": "We hope you have the best possible experience in our billing management panel!"
+    },
+    "analytics": {
+      "currencies": {
+        "title": "Currencies",
+        "fields": {
+          "created_currencies": "Currencies created"
+        }
+      },
+      "contracts": {
+        "title": "Contracts",
+        "fields": {
+          "created_contracts": "Contracts created"
+        }
+      },
+      "general": {
+        "title": "Overview",
+        "fields": {
+          "created_currencies": "Currencies created",
+          "created_contracts": "Contracts created"
+        }
+      }
+    }
+  },
+  "contracts": {
     "hello_world": "Hello world!",
     "translation": "Translation",
-    "lorem_translated": "If the customer is very smart, he or she will be able to achieve the desired result. Let's face it, they don't know what the architect needs most, right? No less or less ready for pleasures. Any of them should be present and no one."
+    "lorem_translated": "If the customer is very smart, he will be able to achieve the desired result. Let's face it, they don't know what the architect needs most, right? Neither more nor less ready for pleasures. Each of them must be present and no one."
+  },
+  "currencies": {
+    "header": {
+      "title": "Currency Management",
+      "subtitle": "Here you can list, create, and edit currencies!"
+    },
+    "toasts": {
+      "deleted_successfully": "Currency deleted successfully!",
+      "cannot_delete": "You cannot delete this currency because it has contracts linked to it."
+    },
+    "buttons": {
+      "new_currency": "New currency",
+      "edit_currency": "Edit",
+      "delete_currency": "Delete currency"
+    },
+    "forms": {
+      "create_currency_modal": {
+        "title": "Create currency",
+        "description": "Fill in the fields below to create a new currency",
+        "errors": {
+          "required": "Required field",
+          "code_min_length": "Minimum 1 character",
+          "code_max_length": "Maximum 4 characters",
+          "name_min_length": "Minimum 3 characters",
+          "name_max_length": "Maximum 256 characters",
+          "code_conflict": "A currency with the same code already exists.",
+          "bad_request": "An error occurred while creating your currency. Review the data and try again.",
+          "unknown_creation_error": "An unexpected error occurred. Please try again later."
+        },
+        "inputs": {
+          "code": {
+            "label": "Code"
+          },
+          "name": {
+            "label": "Name"
+          }
+        },
+        "buttons": {
+          "save": "Create",
+          "cancel": "Cancel"
+        }
+      },
+      "edit_currency_modal": {
+        "title": "Edit currency",
+        "errors": {
+          "required": "Required field",
+          "code_min_length": "Minimum 1 character",
+          "code_max_length": "Maximum 4 characters",
+          "name_min_length": "Minimum 3 characters",
+          "name_max_length": "Maximum 256 characters",
+          "code_conflict": "A currency with the same code already exists.",
+          "bad_request": "An error occurred while editing this currency. Review the data and try again.",
+          "unknown_creation_error": "An unexpected error occurred. Please try again later."
+        },
+        "inputs": {
+          "code": {
+            "label": "Code"
+          },
+          "name": {
+            "label": "Name"
+          }
+        },
+        "buttons": {
+          "save": "Save",
+          "cancel": "Cancel"
+        }
+      }
+    }
   }
 }

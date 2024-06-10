@@ -22,10 +22,10 @@ export default [
       '@typescript-eslint/no-unused-vars': [
         'error',
         {
-          argsIgnorePattern: "^_",
-          varsIgnorePattern: "^_",
-          caughtErrorsIgnorePattern: "^_",
-        }
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
+        },
       ],
       'simple-import-sort/imports': 'error',
       'simple-import-sort/exports': 'error',
@@ -41,6 +41,10 @@ export default [
     },
   },
   ...tailwind.configs['flat/recommended'],
+  {
+    rules: {
+      'tailwindcss/no-custom-classname': 'off',
+    },
+  },
   eslintPluginPrettierRecommended,
-  {},
 ];

@@ -25,7 +25,7 @@ onMounted(() => {
 <template>
   <aside
     :class="[
-      'fixed inset-0 z-30 size-full flex-col bg-background p-8 pt-12 md:sticky md:top-14 md:flex md:h-[calc(100vh-3.5rem)] md:w-64 md:p-0 md:pr-4 md:pt-8',
+      'fixed inset-0 z-30 size-full flex-col bg-background p-8 pt-12 md:sticky md:top-14 md:flex md:h-[calc(100vh-3.5rem)] md:w-64 md:min-w-64 md:p-0 md:pr-4 md:pt-12',
       {
         flex: mobileMenuOpen,
         hidden: !mobileMenuOpen,
@@ -44,7 +44,7 @@ onMounted(() => {
 
     <div class="w-full space-y-4">
       <div v-for="(sidebarItem, index) in sidebarItems" :key="`sidebar-item-${index}`">
-        <div class="flex items-center px-2 text-sm">
+        <div v-if="!!sidebarItem.category" class="flex items-center px-2 text-sm">
           <span class="font-bold text-foreground">
             {{ $t(sidebarItem.category) }}
           </span>
@@ -59,7 +59,10 @@ onMounted(() => {
           >
             <Button
               variant="ghost"
-              :class="['h-8 w-full justify-start px-2', route.path === item.href ? 'bg-muted' : '']"
+              :class="[
+                'h-8 w-full justify-start px-2 text-muted-foreground',
+                route.path === item.href ? 'bg-muted text-foreground' : '',
+              ]"
             >
               {{ $t(item.name) }}
             </Button>
