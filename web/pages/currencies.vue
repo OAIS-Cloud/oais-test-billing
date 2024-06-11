@@ -34,11 +34,11 @@ const {
 });
 
 async function handleCurrencyCreated(data: APICurrency) {
-  currencies.value.push(data);
+  currencies.value?.push(data);
 }
 
 async function handleCurrencyUpdated(data: APICurrency) {
-  const idx = currencies.value.findIndex(x => x.id === data.id);
+  const idx = currencies.value?.findIndex(x => x.id === data.id) ?? -1;
   if (idx > -1) {
     currencies.value.splice(idx, 1, data);
   }
@@ -57,7 +57,7 @@ async function handleDeleteCurrency(id: number) {
     if (status.value === 'success') {
       const idx = currencies.value?.findIndex(x => x.id === id) ?? -1;
       if (idx > -1) {
-        currencies.value?.splice(idx, 1);
+        currencies.value.splice(idx, 1);
       }
 
       toast.success(t('currencies.toasts.deleted_successfully'));
@@ -88,6 +88,14 @@ onUnmounted(() => abortController.abort());
     </div>
 
     <div class="mt-4">
+      <div v-if="!pending && !currencies?.length">
+        <div
+          class="flex h-32 items-center justify-center rounded-md border border-dashed p-4 text-center text-muted-foreground"
+        >
+          {{ $t('currencies.misc.no_currencies') }}
+        </div>
+      </div>
+
       <div v-if="pending" class="grid w-full gap-2 md:grid-cols-2 lg:grid-cols-3">
         <div
           v-for="i in 4"

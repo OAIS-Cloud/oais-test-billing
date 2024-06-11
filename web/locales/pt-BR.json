@@ -54,9 +54,91 @@
     }
   },
   "contracts": {
-    "hello_world": "Olá mundo!",
-    "translation": "Tradução",
-    "lorem_translated": "Se o cliente for muito inteligente, ele conseguirá alcançar o resultado desejado. Convenhamos, eles não sabem o que o arquiteto mais precisa, né? Nem menos nem menos pronto para prazeres. Qualquer um deles deve estar presente e ninguém."
+    "header": {
+      "title": "Gerenciamento de Contratos",
+      "description": "Crie, liste e edite os contratos existentes na aplicação por aqui!"
+    },
+    "toasts": {
+      "deleted_successfully": "Contrato deletado com sucesso!"
+    },
+    "errors": {
+      "unknown_delete_error": "Ocorreu um erro ao deletar este contrato."
+    },
+    "buttons": {
+      "new_contract": "Novo contrato",
+      "edit_contract": "Editar",
+      "delete_contract": "Deletar contrato"
+    },
+    "forms": {
+      "create_contract_modal": {
+        "title": "Criar contrato",
+        "description": "Preencha os campos abaixo para criar um novo contrato",
+        "errors": {
+          "bad_request": "Ocorreu um erro ao criar o contrato. Revise os campos e tente novamente.",
+          "unknown_creation_error": "Ocorreu um erro inesperado ao criar o contrato.",
+          "required_field": "Campo obrigatório",
+          "currency_min_value": "Precisa ser maior que 0.01"
+        },
+        "select_menu": {
+          "select_currency": {
+            "label": "Moeda",
+            "loading_label": "Carregando...",
+            "placeholder": "Moeda"
+          },
+          "select_invoice_day": {
+            "label": "Dia da fatura",
+            "placeholder": "Selecione o dia"
+          }
+        },
+        "inputs": {
+          "currency_value": {
+            "label": "Valor da moeda"
+          }
+        },
+        "buttons": {
+          "save": "Criar",
+          "cancel": "Cancelar"
+        }
+      },
+      "edit_contract_modal": {
+        "title": "Editar contrato",
+        "errors": {
+          "bad_request": "Ocorreu um erro ao editar o contrato. Revise os campos e tente novamente.",
+          "unknown_creation_error": "Ocorreu um erro inesperado ao editar o contrato.",
+          "required_field": "Campo obrigatório",
+          "currency_min_value": "Precisa ser maior que 0.01"
+        },
+        "select_menu": {
+          "select_currency": {
+            "label": "Moeda",
+            "loading_label": "Carregando...",
+            "placeholder": "Moeda"
+          },
+          "select_invoice_day": {
+            "label": "Dia da fatura",
+            "placeholder": "Selecione o dia"
+          }
+        },
+        "inputs": {
+          "currency_value": {
+            "label": "Valor da moeda"
+          }
+        },
+        "buttons": {
+          "save": "Criar",
+          "cancel": "Cancelar"
+        }
+      }
+    },
+    "misc": {
+      "no_contracts": "Não há nenhum contrato criado até o momento.",
+      "contract_row": {
+        "contract_id": "ID CONTRATO",
+        "currency": "MOEDA",
+        "currency_value": "VALOR MOEDA",
+        "invoice_day": "DIA DA FATURA"
+      }
+    }
   },
   "currencies": {
     "header": {
@@ -124,6 +206,9 @@
           "cancel": "Cancelar"
         }
       }
+    },
+    "misc": {
+      "no_currencies": "Não há nenhuma moeda criada até o momento."
     }
   }
 }

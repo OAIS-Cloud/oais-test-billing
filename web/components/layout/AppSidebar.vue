@@ -25,7 +25,7 @@ onMounted(() => {
 <template>
   <aside
     :class="[
-      'fixed inset-0 z-30 size-full flex-col bg-background p-8 pt-12 md:sticky md:top-14 md:flex md:h-[calc(100vh-5rem)] md:w-64 md:min-w-64 md:p-0 md:pr-4 md:pt-8',
+      'fixed inset-0 z-30 size-full flex-col bg-background p-8 pt-12 md:sticky md:top-[var(--header-height)] md:flex md:h-[calc(100vh-5rem)] md:w-64 md:min-w-64 md:p-0 md:pr-4 md:pt-8',
       {
         flex: mobileMenuOpen,
         hidden: !mobileMenuOpen,
