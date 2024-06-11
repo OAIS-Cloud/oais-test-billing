@@ -17,44 +17,137 @@
   "home": {
     "header": {
       "title": "Welcome!",
-      "subtitle": "We hope you have the best possible experience in our billing management panel!",
+      "subtitle": "We hope you have the best possible experience on our billing management dashboard!",
       "warn": "The chart used is still in beta phase so it contains some bugs that will be fixed in the coming weeks"
+    },
+    "errors": {
+      "unknown_report_download_error": "An unexpected error occurred while downloading the report"
+    },
+    "toasts": {
+      "report_download_started": "Your download has started!"
+    },
+    "buttons": {
+      "generate_report": {
+        "name": "Download report"
+      }
     },
     "analytics": {
       "currencies": {
         "title": "Currencies",
         "fields": {
-          "created_currencies": "Currencies created"
+          "created_currencies": "Created currencies"
         }
       },
       "contracts": {
         "title": "Contracts",
         "fields": {
-          "created_contracts": "Contracts created"
+          "created_contracts": "Created contracts"
         }
       },
       "general": {
         "title": "Overview",
         "fields": {
-          "created_currencies": "Currencies created",
-          "created_contracts": "Contracts created"
+          "created_currencies": "Created currencies",
+          "created_contracts": "Created contracts"
         }
       }
     }
   },
   "contracts": {
-    "hello_world": "Hello world!",
-    "translation": "Translation",
-    "lorem_translated": "If the customer is very smart, he will be able to achieve the desired result. Let's face it, they don't know what the architect needs most, right? Neither more nor less ready for pleasures. Each of them must be present and no one."
+    "header": {
+      "title": "Contract Management",
+      "description": "Create, list and edit existing contracts in the application here!"
+    },
+    "toasts": {
+      "deleted_successfully": "Contract successfully deleted!"
+    },
+    "errors": {
+      "unknown_delete_error": "An error occurred while deleting this contract."
+    },
+    "buttons": {
+      "new_contract": "New contract",
+      "edit_contract": "Edit",
+      "delete_contract": "Delete contract"
+    },
+    "forms": {
+      "create_contract_modal": {
+        "title": "Create contract",
+        "description": "Fill in the fields below to create a new contract",
+        "errors": {
+          "bad_request": "An error occurred while creating the contract. Review the fields and try again.",
+          "unknown_creation_error": "An unexpected error occurred while creating the contract.",
+          "required_field": "Required field",
+          "currency_min_value": "Must be greater than 0.01"
+        },
+        "select_menu": {
+          "select_currency": {
+            "label": "Currency",
+            "loading_label": "Loading...",
+            "placeholder": "Currency"
+          },
+          "select_invoice_day": {
+            "label": "Invoice day",
+            "placeholder": "Select day"
+          }
+        },
+        "inputs": {
+          "currency_value": {
+            "label": "Currency value"
+          }
+        },
+        "buttons": {
+          "save": "Create",
+          "cancel": "Cancel"
+        }
+      },
+      "edit_contract_modal": {
+        "title": "Edit contract",
+        "errors": {
+          "bad_request": "An error occurred while editing the contract. Review the fields and try again.",
+          "unknown_creation_error": "An unexpected error occurred while editing the contract.",
+          "required_field": "Required field",
+          "currency_min_value": "Must be greater than 0.01"
+        },
+        "select_menu": {
+          "select_currency": {
+            "label": "Currency",
+            "loading_label": "Loading...",
+            "placeholder": "Currency"
+          },
+          "select_invoice_day": {
+            "label": "Invoice day",
+            "placeholder": "Select day"
+          }
+        },
+        "inputs": {
+          "currency_value": {
+            "label": "Currency value"
+          }
+        },
+        "buttons": {
+          "save": "Save",
+          "cancel": "Cancel"
+        }
+      }
+    },
+    "misc": {
+      "no_contracts": "There are no contracts created at the moment",
+      "contract_row": {
+        "contract_id": "CONTRACT ID",
+        "currency": "CURRENCY",
+        "currency_value": "CURRENCY VALUE",
+        "invoice_day": "INVOICE DAY"
+      }
+    }
   },
   "currencies": {
     "header": {
       "title": "Currency Management",
-      "subtitle": "Here you can list, create, and edit currencies!"
+      "subtitle": "Here you can list, create and edit currencies!"
     },
     "toasts": {
-      "deleted_successfully": "Currency deleted successfully!",
-      "cannot_delete": "You cannot delete this currency because it has contracts linked to it."
+      "deleted_successfully": "Currency successfully deleted!",
+      "cannot_delete": "You cannot delete this currency because it has linked contracts."
     },
     "buttons": {
       "new_currency": "New currency",
@@ -73,7 +166,7 @@
           "name_max_length": "Maximum 256 characters",
           "code_conflict": "A currency with the same code already exists.",
           "bad_request": "An error occurred while creating your currency. Review the data and try again.",
-          "unknown_creation_error": "An unexpected error occurred. Please try again later."
+          "unknown_creation_error": "An unexpected error occurred. Try again later."
         },
         "inputs": {
           "code": {
@@ -98,7 +191,7 @@
           "name_max_length": "Maximum 256 characters",
           "code_conflict": "A currency with the same code already exists.",
           "bad_request": "An error occurred while editing this currency. Review the data and try again.",
-          "unknown_creation_error": "An unexpected error occurred. Please try again later."
+          "unknown_creation_error": "An unexpected error occurred. Try again later."
         },
         "inputs": {
           "code": {
@@ -113,6 +206,9 @@
           "cancel": "Cancel"
         }
       }
+    },
+    "misc": {
+      "no_currencies": "There are no currencies created at the moment"
     }
   }
 }

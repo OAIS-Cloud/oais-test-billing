@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { GenerateReportButton } from '~/components/buttons';
 import { AreaChart } from '~/components/ui/chart-area';
 import { Skeleton } from '~/components/ui/skeleton';
 import type { APIAnalytics } from '~/types/api';
@@ -51,16 +52,16 @@ onUnmounted(() => abortController.abort());
 
 <template>
   <div>
-    <h1 @click="() => $forceUpdate()" class="text-4xl font-bold">{{ $t('home.header.title') }}</h1>
+    <h1 class="text-4xl font-bold">{{ $t('home.header.title') }}</h1>
     <p class="mt-2 leading-relaxed text-muted-foreground">
       {{ $t('home.header.subtitle') }}
     </p>
 
-    <div class="my-2 rounded-md border-orange-900 bg-orange-900/40 p-4 text-sm text-orange-500">
-      {{ $t('home.header.warn') }}
+    <div class="mt-8 flex w-full justify-end">
+      <GenerateReportButton />
     </div>
 
-    <div class="mt-8 flex flex-col gap-4 md:flex-row md:items-center">
+    <div class="mt-4 flex flex-col gap-4 md:flex-row md:items-center">
       <div class="flex flex-col rounded-md border">
         <div class="p-4">
           <Skeleton v-if="pending" class="h-6 w-32 rounded-full" />
@@ -109,7 +110,7 @@ onUnmounted(() => abortController.abort());
     </div>
 
     <div class="mt-4 rounded-md border p-4">
-      <h2 class="text-xl font-bold">Visão geral</h2>
+      <h2 class="text-xl font-bold">{{ $t('home.analytics.general.title') }}</h2>
       <AreaChart
         v-if="analytics"
         :data="

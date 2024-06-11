@@ -1,6 +1,7 @@
 export interface APIContract {
   id: number;
   currency_value: number;
+  invoice_closing_day: number;
   created_at: string;
   updated_at: string;
 }
