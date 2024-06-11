@@ -76,6 +76,6 @@ class CurrencyResource(private val currencyService: CurrencyService) {
 
         val updatedCurrency = currencyService.updateCurrencyById(id, currency);
 
-        return Response.status(Response.Status.OK).entity(updatedCurrency).build();
+        return Response.ok(updatedCurrency).build();
     }
 }
