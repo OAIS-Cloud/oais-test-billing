@@ -17,7 +17,8 @@
   "home": {
     "header": {
       "title": "Welcome!",
-      "subtitle": "We hope you have the best possible experience in our billing management panel!"
+      "subtitle": "We hope you have the best possible experience in our billing management panel!",
+      "warn": "The chart used is still in beta phase so it contains some bugs that will be fixed in the coming weeks"
     },
     "analytics": {
       "currencies": {

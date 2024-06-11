@@ -16,4 +16,6 @@ FROM base
 
 COPY --from=build /app/web/.output /app/web/.output
 
+EXPOSE 3000
+
 CMD ["node", ".output/server/index.mjs"]

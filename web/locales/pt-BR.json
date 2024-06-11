@@ -17,7 +17,8 @@
   "home": {
     "header": {
       "title": "Bem vindo(a)!",
-      "subtitle": "Esperamos que você tenha a melhor experiência possível em nosso painel de gerenciamento de cobranças! -> (O chart usado ainda está em fase beta então ele contém alguns bugs que será introduzido nas proximas semanas)"
+      "subtitle": "Esperamos que você tenha a melhor experiência possível em nosso painel de gerenciamento de cobranças!",
+      "warn": "O chart usado ainda está em fase beta então ele contém alguns bugs que serão corrigidos nas proximas semanas"
     },
     "analytics": {
       "currencies": {
