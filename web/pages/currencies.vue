@@ -29,6 +29,7 @@ const {
 } = await useApi<APICurrency[]>('/currencies', {
   signal: abortController.signal,
   lazy: true,
+  server: false,
   useFetch: true,
 });
 

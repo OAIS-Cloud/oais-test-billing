@@ -18,7 +18,7 @@ export function useApi<T>(
   const runtimeConfig = useRuntimeConfig();
   const url = new URL(path, runtimeConfig.public.API_BASE_URL);
 
-  if (options.useFetch || import.meta.server) {
+  if (options.useFetch) {
     return useFetch(url.toString(), options);
   }
 
