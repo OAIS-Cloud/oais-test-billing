@@ -88,7 +88,7 @@ onUnmounted(() => abortController.abort());
     </div>
 
     <div class="mt-4">
-      <div v-if="pending" class="grid w-full grid-cols-3 gap-2">
+      <div v-if="pending" class="grid w-full gap-2 md:grid-cols-2 lg:grid-cols-3">
         <div
           v-for="i in 4"
           :key="`loading-currencies-skeleton-${i}`"

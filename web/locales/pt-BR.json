@@ -20,6 +20,17 @@
       "subtitle": "Esperamos que você tenha a melhor experiência possível em nosso painel de gerenciamento de cobranças!",
       "warn": "O chart usado ainda está em fase beta então ele contém alguns bugs que serão corrigidos nas proximas semanas"
     },
+    "errors": {
+      "unknown_report_download_error": "Ocorreu um erro inesperado ao baixar o relatório"
+    },
+    "toasts": {
+      "report_download_started": "Seu download foi iniciado!"
+    },
+    "buttons": {
+      "generate_report": {
+        "name": "Baixar relatório"
+      }
+    },
     "analytics": {
       "currencies": {
         "title": "Moedas",

@@ -20,6 +20,17 @@
       "subtitle": "We hope you have the best possible experience in our billing management panel!",
       "warn": "The chart used is still in beta phase so it contains some bugs that will be fixed in the coming weeks"
     },
+    "errors": {
+      "unknown_report_download_error": "An unexpected error occurred while downloading the report"
+    },
+    "toasts": {
+      "report_download_started": "Your download has started!"
+    },
+    "buttons": {
+      "generate_report": {
+        "name": "Download report"
+      }
+    },
     "analytics": {
       "currencies": {
         "title": "Currencies",

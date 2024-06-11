@@ -13,7 +13,7 @@ const { setMobileMenuOpen } = useMobileMenu();
 </script>
 
 <template>
-  <header class="sticky top-0 h-14 w-full border-b bg-background">
+  <header class="sticky top-0 z-10 h-[var(--header-height)] w-full bg-background">
     <div class="container flex h-full items-center">
       <a href="/" class="flex items-center gap-2 text-xl">
         <img src="/logo.svg" alt="Logo Oais Cloud" class="h-7" />

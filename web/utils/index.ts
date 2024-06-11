@@ -8,3 +8,9 @@ export function getAllDaysFromAgoAsDateString(days: number) {
 
   return dates;
 }
+
+export function dateToCleanFileNameDateFormat(date: Date) {
+  return date
+    .toISOString()
+    .replace(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})\.\d{3}Z$/, '$1$2$3_$4$5$6');
+}
